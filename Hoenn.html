@@ -1,4 +1,4 @@
-<html onDblClick = "Hid()">
+<html>
 <link href="map.css" rel="stylesheet" type="text/css" />
 <header>
 <title>Pokemon Ruby/Sapphire/Emerald Interactive Map by BLaDoM</title>
@@ -8,15 +8,8 @@
 <script>
 
 function Route(top, left, no){
-//arg = 'top: ' + (top - 5) + '%; left: ' + (left + 5) + '%; opacity: 0.9;';
-arg = 'opacity: 1';
-$('#InfoBox').attr("style", arg);
 na = no.html();
 $('#InfoBox').html(na);
-$('#InfoBox').show();
-}
-function Hid(){
-$('#InfoBox').hide();
 }
 </script>
 
@@ -58,6 +51,7 @@ $('#InfoBox').hide();
 	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 41%;" 		onMouseOver = "Route(43, 41, $('#Route133'))"></div>
 	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 31%;" 		onMouseOver = "Route(43, 31, $('#Route134'))"></div>
 	<div id = "InfoBox">
+	Hover over a part of the map to see the encounters in that area
 	</div>
 </div>
 </body>
