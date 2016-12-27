@@ -31,7 +31,7 @@ body{
 #InfoBox{
 	
 	position:absolute;
-	opacity: 0;
+	opacity: 1;
 	width: 35%;
 	height: auto;
 	top: 0%;
