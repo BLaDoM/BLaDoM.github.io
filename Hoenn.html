@@ -7,7 +7,7 @@
 </script>
 <script>
 
-function Route(top, left, no){
+function Route(no){
 na = no.html();
 $('#InfoBox').html(na);
 }
@@ -15,48 +15,256 @@ $('#InfoBox').html(na);
 
 </header>
 <body>
+<div id = "wrapper">
 <div id = "minMap">
-	<div id = "Route" style = "width: 3%; height: 7%; top: 61%; left: 15.6%;" 	onMouseOver = "Route(61, 15.6, $('#Route101'))"></div>
-	<div id = "Route" style = "width: 7%;height: 5%; top: 57%;left: 9%;" 		onMouseOver = "Route(5, 9, $('#Route102'))"></div>
-	<div id = "Route" style = "width: 12%;height: 5%;top: 52%;left: 16%;" 		onMouseOver = "Route(35, 16, $('#Route103'))"></div>
-	<div id = "Route" style = "width: 3%;height: 17%; top: 45%;left: 3%;" 		onMouseOver = "Route(45, 3, $('#Route104'))"></div>
-	<div id = "Route" style = "width: 3%;height: 16%;top: 62%;left: 3%;" 		onMouseOver = "Route(62, 3, $('#Route105'))"></div>
-	<div id = "Route" style = "width: 10%;height: 5%;top: 78%;left: 3%;" 		onMouseOver = "Route(58, 3, $('#Route106'))"></div>
-	<div id = "Route" style = "width: 9%;height: 5%;top: 83%;left: 13%;" 		onMouseOver = "Route(63, 13, $('#Route107'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 83%;left: 22%;" 		onMouseOver = "Route(63, 22, $('#Route108'))"></div>
-	<div id = "Route" style = "width: 3%;height: 16%;top: 72%;left: 28%;" 		onMouseOver = "Route(55, 28, $('#Route109'))"></div>
-	<div id = "Route" style = "width: 3%;height: 16%;top: 47%;left: 28%;" 		onMouseOver = "Route(20, 28, $('#Route110'))"></div>
-	<div id = "Route" style = "width: 3%;height: 30%;top: 11%;left: 28%;" 		onMouseOver = "Route(11, 28, $('#Route111'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 26%;left: 22%;" 		onMouseOver = "Route(26, 22, $('#Route112'))"></div>
-	<div id = "Route" style = "width: 12%;height: 5%;top: 11%;left: 16%;" 		onMouseOver = "Route(11, 16, $('#Route113'))"></div>
-	<div id = "Route" style = "width: 6%;height: 15%;top: 11%;left: 6%;" 		onMouseOver = "Route(0, 6, $('#Route114'))"></div>
-	<div id = "Route" style = "width: 3%;height: 15%;top: 21%;left: 3%;" 		onMouseOver = "Route(21, 3, $('#Route115'))"></div>
-	<div id = "Route" style = "width: 12%;height: 5%;top: 37%;left: 6%;" 		onMouseOver = "Route(37, 6, $('#Route116'))"></div>
-	<div id = "Route" style = "width: 9%;height: 5%;top: 42%;left: 19%;" 		onMouseOver = "Route(2, 19, $('#Route117'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 42%;left: 34%;" 		onMouseOver = "Route(32, 34, $('#Route118'))"></div>
-	<div id = "Route" style = "width: 3%;height: 31%;top: 11%;left: 37.5%;" 	onMouseOver = "Route(-2, 37.5, $('#Route119'))"></div>
-	<div id = "Route" style = "width: 3%;height: 20%;top: 11%;left: 43.5%;" 	onMouseOver = "Route(11, 43.5, $('#Route120'))"></div>
-	<div id = "Route" style = "width: 13%;height: 5%;top: 26%;left: 46.5%;" 	onMouseOver = "Route(12, 46.5, $('#Route121'))"></div>
-	<div id = "Route" style = "width: 3.5%;height: 11%;top: 31%;left: 52.5%;" onMouseOver = "Route(31, 52.5, $('#Route122'))"></div>
-	<div id = "Route" style = "width: 16%;height: 5%;top: 42%;left: 40%;" 		onMouseOver = "Route(42, 40, $('#Route123'))"></div>
-	<div id = "Route" style = "width: 12%;height: 16%;top: 26%;left: 65.5%;" 	onMouseOver = "Route(26, 65.5, $('#Route124'))"></div>
-	<div id = "Route" style = "width: 6.5%;height: 10%;top: 26%;left: 77.5%;" onMouseOver = "Route(26, 40, $('#Route125'))"></div>
-	<div id = "Route" style = "width: 8.5%;height: 15%;top: 42%;left: 65.5%;" onMouseOver = "Route(26, 77.5, $('#Route126'))"></div>
-	<div id = "Route" style = "width: 10%;height: 15%;top: 42%;left: 74%;" 	onMouseOver = "Route(42, 40, $('#Route127'))"></div>
-	<div id = "Route" style = "width: 13%;height: 6%;top: 57%;left: 74%;" 		onMouseOver = "Route(57, 44, $('#Route128'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 63%;left: 78%;" 		onMouseOver = "Route(23, 38, $('#Route129'))"></div>
-	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 68%;" 		onMouseOver = "Route(23, 68, $('#Route130'))"></div>
-	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 59%;" 		onMouseOver = "Route(43, 59, $('#Route131'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 63%;left: 50%;" 		onMouseOver = "Route(43, 50, $('#Route132'))"></div>
-	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 41%;" 		onMouseOver = "Route(43, 41, $('#Route133'))"></div>
-	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 31%;" 		onMouseOver = "Route(43, 31, $('#Route134'))"></div>
-	<div id = "InfoBox">
+	<div id = "Route" style = "width: 3%; height: 7%; top: 61%; left: 15.6%;" 	onMouseOver = "Route($('#Route101'))"></div>
+	<div id = "Route" style = "width: 7%;height: 5%; top: 57%;left: 9%;" 		onMouseOver = "Route($('#Route102'))"></div>
+	<div id = "Route" style = "width: 12%;height: 5%;top: 52%;left: 16%;" 		onMouseOver = "Route($('#Route103'))"></div>
+	<div id = "Route" style = "width: 3%;height: 17%; top: 45%;left: 3%;" 		onMouseOver = "Route($('#Route104'))"></div>
+	<div id = "Route" style = "width: 3%;height: 16%;top: 62%;left: 3%;" 		onMouseOver = "Route($('#Route105'))"></div>
+	<div id = "Route" style = "width: 10%;height: 5%;top: 78%;left: 3%;" 		onMouseOver = "Route($('#Route106'))"></div>
+	<div id = "Route" style = "width: 9%;height: 5%;top: 83%;left: 13%;" 		onMouseOver = "Route($('#Route107'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 83%;left: 22%;" 		onMouseOver = "Route($('#Route108'))"></div>
+	<div id = "Route" style = "width: 3%;height: 16%;top: 72%;left: 28%;" 		onMouseOver = "Route($('#Route109'))"></div>
+	<div id = "Route" style = "width: 3%;height: 16%;top: 47%;left: 28%;" 		onMouseOver = "Route($('#Route110'))"></div>
+	<div id = "Route" style = "width: 3%;height: 30%;top: 11%;left: 28%;" 		onMouseOver = "Route($('#Route111'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 26%;left: 22%;" 		onMouseOver = "Route($('#Route112'))"></div>
+	<div id = "Route" style = "width: 12%;height: 5%;top: 11%;left: 16%;" 		onMouseOver = "Route($('#Route113'))"></div>
+	<div id = "Route" style = "width: 6%;height: 15%;top: 11%;left: 6%;" 		onMouseOver = "Route($('#Route114'))"></div>
+	<div id = "Route" style = "width: 3%;height: 15%;top: 21%;left: 3%;" 		onMouseOver = "Route($('#Route115'))"></div>
+	<div id = "Route" style = "width: 12%;height: 5%;top: 37%;left: 6%;" 		onMouseOver = "Route($('#Route116'))"></div>
+	<div id = "Route" style = "width: 9%;height: 5%;top: 42%;left: 19%;" 		onMouseOver = "Route($('#Route117'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 42%;left: 34%;" 		onMouseOver = "Route($('#Route118'))"></div>
+	<div id = "Route" style = "width: 3%;height: 31%;top: 11%;left: 37.5%;" 	onMouseOver = "Route($('#Route119'))"></div>
+	<div id = "Route" style = "width: 3%;height: 20%;top: 11%;left: 43.5%;" 	onMouseOver = "Route($('#Route120'))"></div>
+	<div id = "Route" style = "width: 13%;height: 5%;top: 26%;left: 46.5%;" 	onMouseOver = "Route($('#Route121'))"></div>
+	<div id = "Route" style = "width: 3.5%;height: 11%;top: 31%;left: 52.5%;" onMouseOver = "Route($('#Route122'))"></div>
+	<div id = "Route" style = "width: 16%;height: 5%;top: 42%;left: 40%;" 		onMouseOver = "Route($('#Route123'))"></div>
+	<div id = "Route" style = "width: 12%;height: 16%;top: 26%;left: 65.5%;" 	onMouseOver = "Route($('#Route124'))"></div>
+	<div id = "Route" style = "width: 6.5%;height: 10%;top: 26%;left: 77.5%;" onMouseOver = "Route($('#Route125'))"></div>
+	<div id = "Route" style = "width: 8.5%;height: 15%;top: 42%;left: 65.5%;" onMouseOver = "Route($('#Route126'))"></div>
+	<div id = "Route" style = "width: 10%;height: 15%;top: 42%;left: 74%;" 	onMouseOver = "Route($('#Route127'))"></div>
+	<div id = "Route" style = "width: 13%;height: 6%;top: 57%;left: 74%;" 		onMouseOver = "Route($('#Route128'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 63%;left: 78%;" 		onMouseOver = "Route($('#Route129'))"></div>
+	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 68%;" 		onMouseOver = "Route($('#Route130'))"></div>
+	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 59%;" 		onMouseOver = "Route($('#Route131'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 63%;left: 50%;" 		onMouseOver = "Route($('#Route132'))"></div>
+	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 41%;" 		onMouseOver = "Route($('#Route133'))"></div>
+	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 31%;" 		onMouseOver = "Route($('#Route134'))"></div>
+	<div id = "Route" style = "width: 3%;height: 5%;top: 68%;left: 15.6%;" 	onMouseOver = "Route($('#LittlerootTown'))"></div>
+	<div id = "Route" style = "width: 3%;height: 5%;top: 57%;left: 15.6%;" 	onMouseOver = "Route($('#OldaleTown'))"></div>
+	<div id = "Route" style = "width: 3%;height: 5%;top: 57%;left: 6%;" 			onMouseOver = "Route($('#PetalburgCity'))"></div>
+	<div id = "Route" style = "width: 3%;height: 11%;top: 36%;left: 3%;" 		onMouseOver = "Route($('#RustboroCity'))"></div>
+	<div id = "Route" style = "width: 4%;height: 5%;top: 83%;left: 9%;" 			onMouseOver = "Route($('#DewfordTown'))"></div>
+	<div id = "Route" style = "width: 3%;height: 10%;top: 62%;left: 28%;" 		onMouseOver = "Route($('#SlateportCity'))"></div>
+	<div id = "Route" style = "width: 6%;height: 6%;top: 41%;left: 28%;" 		onMouseOver = "Route($('#MauvilleCity'))"></div>
+	<div id = "Route" style = "width: 4%;height: 5%;top: 42%;left: 15%;" 		onMouseOver = "Route($('#VerdanturfTown'))"></div>
+	<div id = "Route" style = "width: 4%;height: 5%;top: 11%;left: 12%;" 		onMouseOver = "Route($('#FallarborTown'))"></div>
+	<div id = "Route" style = "width: 4%;height: 5%;top: 26%;left: 18%;" 		onMouseOver = "Route($('#LavaridgeTown'))"></div>
+	<div id = "Route" style = "width: 4%;height: 5%;top: 11%;left: 40%;" 		onMouseOver = "Route($('#FortreeCity'))"></div>
+	<div id = "Route" style = "width: 7%;height: 5%;top: 26%;left: 59%;" 		onMouseOver = "Route($('#LilicoveCity'))"></div>
+	<div id = "Route" style = "width: 6.5%;height: 6%;top: 36%;left: 77.5%;" 	onMouseOver = "Route($('#MossdeepCity'))"></div>
+	<div id = "Route" style = "width: 4%;height: 6%;top: 46%;left: 68%;" 		onMouseOver = "Route($('#SootopolisCity'))"></div>
+	<div id = "Route" style = "width: 3%;height: 5%;top: 63%;left: 56%;" 		onMouseOver = "Route($('#PacifidlogTown'))"></div>
+	<div id = "Route" style = "width: 4%;height: 11%;top: 52%;left: 87%;" 		onMouseOver = "Route($('#EverGrandeCity'))"></div>
+</div>
+</div>
+<div id = "InfoBox">
 	Hover over a part of the map to see the encounters in that area
 	</div>
-</div>
 </body>
 </html>
 <div id = "RouteContainer" style = "display: none;">
+<div id = "LittlerootTown">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Littleroot Town</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+<tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
+<tr><td>Chikorita<td>Gift</td><td>5</td><td>Only One</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Cyndaquil<td>Gift</td><td>5</td><td>Only One</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Totodile<td>Gift</td><td>5</td><td>Only One</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "OldaleTown">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Oldale Town</h><th></th></th></tr>
+	</table>
+</div>
+<div id = "PetalburgCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Petalburg City</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Marill<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Goldeen<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Goldeen<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Corphish<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Corphish<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "RustboroCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Rustboro City</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
+<tr><td>Lileep<td>Root Fossil</td><td>20</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Anorith<td>Claw Fossil</td><td>20</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Makuhita<td>Trade Slakoth</td><td>1-100</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Seedot<td>Trade Ralts</td><td>1-100</td><td>Only One</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "DewfordTown">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Dewford Town</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "SlateportCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Slateport City</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "MauvilleCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Mauville City</h><th></th></th></tr>
+	</table>
+</div>
+<div id = "VerdanturfTown">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Verdanturf Town</h><th></th></th></tr>
+	</table>
+</div>
+<div id = "FallarborTown">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Fallarbor Town</h><th></th></th></tr>
+	</table>
+</div>
+<div id = "LavaridgeTown">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Lavaridge Town</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
+<tr><td>Wynaut<td>Egg</td><td>5</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "FortreeCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Fortree City</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td>Skitty<td>Trade Pikachu</td><td>1-100</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Plusle<td>Trade Volbeat</td><td>1-100</td><td>Only One</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "LilicoveCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Lilicove City</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Staryu<td>Super Rod</td><td>25-30</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>25-45</td><td>85%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "MossdeepCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Mossdeep City</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Sharpedo<td>Super Rod</td><td>30-35</td><td>40%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>25-45</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
+<tr><td>Beldum<td>Gift</td><td>5</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
+<div id = "SootopolisCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Sootopolis City</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Maikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Super Rod</td><td>30-35</td><td>80%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Gyarados<td>Super Rod</td><td>5-45</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+			</table>
+	</div>
+<div id = "PacifidlogTown">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Paciflidlog Town</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Sharpedo<td>Super Rod</td><td>30-35</td><td>40%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>25-45</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
+<tr><td>Horsea<td>Trade Bagon</td><td>1-100</td><td>Only One</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Corsola<td>Trade Bellossom</td><td>1-100</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+	</table>
+</div>
+<div id = "EverGrandeCity">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>Ever Grande City</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Luvdisc<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Corsola<td>Super Rod</td><td>30-35</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>30-45</td><td>45%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Luvdisc<td>Super Rod</td><td>30-35</td><td>40%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+	</table>
+</div>
 	<div id = "Route101">
 			<table id = "RouteTable">
 			<tr><th></th><th colSpan = 3><h>ROUTE 101</h><th></th></th></tr>
@@ -445,9 +653,9 @@ $('#InfoBox').html(na);
 <tr><td>Carvanha<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Carvanha<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
-<tr><td>Feebas<td>Old Rod</td><td>20-25</td><td>50% on 6 random tiles</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
-<tr><td>Feebas<td>Good Rod</td><td>20-25</td><td>50% on 6 random tiles</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
-<tr><td>Feebas<td>Super Rod</td><td>20-25</td><td>50% on 6 random tiles</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Feebas<td>Old Rod</td><td>20-25</td><td>50% on 6 tiles</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Feebas<td>Good Rod</td><td>20-25</td><td>50% on 6 tiles</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Feebas<td>Super Rod</td><td>20-25</td><td>50% on 6 tiles</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Kecleon<td>Gift</td><td>30</td><td>Only one</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Kecleon<td>Devon Scope</td><td>30</td><td>Only one</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Surskit<td>Swarm</td><td>28</td><td>50%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
