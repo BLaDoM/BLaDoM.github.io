@@ -7,12 +7,12 @@ body{
 
 #minMap{
 	
-	top: auto;
-	left: 3%;
+	top: 0px;
+	left: 30px;
 	position: relative;
 	display: block;
-	width: 70%;
-	height: 100%;
+	width: 900px;
+	height: 542px;
 	background-image: url('Hoennmin.png');
 	background-size: cover;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -32,10 +32,11 @@ body{
 	
 	position:absolute;
 	opacity: 1;
-	width: 35%;
+	width: 27%;
 	height: auto;
-	top: 0%;
-	left: 100%;
+	top: 2%;
+	left: 930px;
+	min-width: 300px;
 	background-color: white;
 	inner-HTML: Kloppo;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
