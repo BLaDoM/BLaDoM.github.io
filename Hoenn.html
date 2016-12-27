@@ -1,0 +1,373 @@
+<html onDblClick = "Hid()">
+<link href="map.css" rel="stylesheet" type="text/css" />
+<header>
+<title>Pokemon Ruby/Sapphire/Emerald Interactive Map by BLaDoM</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script>
+
+function Route(top, left, no){
+arg = 'top: ' + (top - 5) + '%; left: ' + (left + 5) + '%; opacity: 1;';
+$('#InfoBox').attr("style", arg);
+na = no.html();
+$('#InfoBox').html( '<div id = "Exit" onClick= "Hid()" style = "position: relative; background: url(cancel.png); background-size: 100%; top: 5px; left: 92%; width: 20px; height: 20px;"></div>' + na);
+$('#InfoBox').show();
+}
+function Hid(){
+$('#InfoBox').hide();
+}
+</script>
+
+</header>
+<body>
+<div id = "minMap">
+	<div id = "Route" style = "width: 3%; height: 7%; top: 61%; left: 15.6%;" 	onMouseOver = "Route(61, 15.6, $('#Route101'))"></div>
+	<div id = "Route" style = "width: 7%;height: 5%; top: 57%;left: 9%;" 		onMouseOver = "Route(5, 9, $('#Route102'))"></div>
+	<div id = "Route" style = "width: 12%;height: 5%;top: 52%;left: 16%;" 		onMouseOver = "Route(35, 16, $('#Route103'))"></div>
+	<div id = "Route" style = "width: 3%;height: 17%; top: 45%;left: 3%;" 		onMouseOver = "Route(45, 3, $('#Route104'))"></div>
+	<div id = "Route" style = "width: 3%;height: 16%;top: 62%;left: 3%;" 		onMouseOver = "Route(62, 3, $('#Route105'))"></div>
+	<div id = "Route" style = "width: 10%;height: 5%;top: 78%;left: 3%;" 		onMouseOver = "Route(58, 3, $('#Route106'))"></div>
+	<div id = "Route" style = "width: 9%;height: 5%;top: 83%;left: 13%;" 		onMouseOver = "Route(63, 13, $('#Route107'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 83%;left: 22%;" 		onMouseOver = "Route(63, 22, $('#Route108'))"></div>
+	<div id = "Route" style = "width: 3%;height: 16%;top: 72%;left: 28%;" 		onMouseOver = "Route(55, 28, $('#Route109'))"></div>
+	<div id = "Route" style = "width: 3%;height: 16%;top: 47%;left: 28%;" 		onMouseOver = "Route(20, 28, $('#Route110'))"></div>
+	<div id = "Route" style = "width: 3%;height: 30%;top: 11%;left: 28%;" 		onMouseOver = "Route(11, 28, $('#Route111'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 26%;left: 22%;" 		onMouseOver = "Route(26, 22, $('#Route112'))"></div>
+	<div id = "Route" style = "width: 12%;height: 5%;top: 11%;left: 16%;" 		onMouseOver = "Route(11, 16, $('#Route113'))"></div>
+	<div id = "Route" style = "width: 6%;height: 15%;top: 11%;left: 6%;" 		onMouseOver = "Route(11, 6, $('#Route114'))"></div>
+	<div id = "Route" style = "width: 3%;height: 15%;top: 21%;left: 3%;" 		onMouseOver = "Route(21, 3, $('#Route115'))"></div>
+	<div id = "Route" style = "width: 12%;height: 5%;top: 37%;left: 6%;" 		onMouseOver = "Route(37, 6, $('#Route116'))"></div>
+	<div id = "Route" style = "width: 9%;height: 5%;top: 42%;left: 19%;" 		onMouseOver = "Route(42, 19, $('#Route117'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 42%;left: 34%;" 		onMouseOver = "Route(42, 34, $('#Route118'))"></div>
+	<div id = "Route" style = "width: 3%;height: 31%;top: 11%;left: 37.5%;" 	onMouseOver = "Route(11, 37.5, $('#Route119'))"></div>
+	<div id = "Route" style = "width: 3%;height: 20%;top: 11%;left: 43.5%;" 	onMouseOver = "Route(11, 43.5, $('#Route120'))"></div>
+	<div id = "Route" style = "width: 13%;height: 5%;top: 26%;left: 46.5%;" 	onMouseOver = "Route(26, 46.5, $('#Route121'))"></div>
+	<div id = "Route" style = "width: 3.5%;height: 11%;top: 31%;left: 52.5%;" onMouseOver = "Route(31, 52.5, $('#Route122'))"></div>
+	<div id = "Route" style = "width: 16%;height: 5%;top: 42%;left: 40%;" 		onMouseOver = "Route(42, 40, $('#Route123'))"></div>
+	<div id = "Route" style = "width: 12%;height: 16%;top: 26%;left: 65.5%;" 	onMouseOver = "Route(26, 65.5, $('#Route124'))"></div>
+	<div id = "Route" style = "width: 6.5%;height: 10%;top: 26%;left: 77.5%;" onMouseOver = "Route(26, 77.5, $('#Route125'))"></div>
+	
+	<div id = "Route" style = "width: 10%;height: 15%;top: 42%;left: 74%;" 	onMouseOver = "Route(42, 74, $('#Route127'))"></div>
+	<div id = "Route" style = "width: 13%;height: 6%;top: 57%;left: 74%;" 		onMouseOver = "Route(57, 74, $('#Route128'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 63%;left: 78%;" 		onMouseOver = "Route(63, 78, $('#Route129'))"></div>
+	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 68%;" 		onMouseOver = "Route(63, 68, $('#Route130'))"></div>
+	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 59%;" 		onMouseOver = "Route(63, 59, $('#Route131'))"></div>
+	<div id = "Route" style = "width: 6%;height: 5%;top: 63%;left: 50%;" 		onMouseOver = "Route(63, 50, $('#Route132'))"></div>
+	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 41%;" 		onMouseOver = "Route(63, 41, $('#Route133'))"></div>
+	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 31%;" 		onMouseOver = "Route(63, 31, $('#Route134'))"></div>
+	<div id = "InfoBox">
+	</div>
+</div>
+</body>
+</html>
+<div id = "RouteContainer" style = "display: none;">
+	<div id = "Route101">
+			<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 101</h><th></th></th></tr>
+<tr><td>Poochyena<td>Grass</td><td>2-3</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Poochyena<td>Grass</td><td>2-3</td><td>45%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Zigzagoon<td>Grass</td><td>2-3</td><td>45%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Zigzagoon<td>Grass</td><td>2-3</td><td>10%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wurmple<td>Grass</td><td>2-3</td><td>45%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>STARTERS</b></td></tr><tr>
+<td>Treecko<td>Starter</td><td>5</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Torchic<td>Starter</td><td>5</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Mudkip<td>Starter</td><td>5</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+
+		</table>
+	</div>
+	<div id = "Route102">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 102</h><th></th></th></tr>
+			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
+			<tr><td>Poochyena<td>Grass</td><td>3-4</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Poochyena<td>Grass</td><td>3-4</td><td>30%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Zigzagoon<td>Grass</td><td>3-4</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Zigzagoon<td>Grass</td><td>3-4</td><td>15%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wurmple<td>Grass</td><td>3-4</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Lotad<td>Grass</td><td>3-4</td><td>20%</td><td><b><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Seedot<td>Grass</td><td>3-4</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span></b></td></tr>
+<tr><td>Seedot<td>Grass</td><td>3</td><td>1%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Ralts<td>Grass</td><td>4</td><td>4%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Surskit<td>Grass</td><td>3</td><td>1%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Goldeen<td>Surfing</td><td>20-30</td><td>1%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Marill<td>Surfing</td><td>5-35</td><td>99%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Surskit<td>Surfing</td><td>20-30</td><td>1%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Goldeen<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Goldeen<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Corphish<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Corphish<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
+<tr><td>Surskit<td>Swarm</td><td>3</td><td>50%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Seedot<td>Swarm</td><td>3</td><td>50%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route103">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 103</h><th></th></th></tr>
+			<tr><td>Poochyena<td>Grass</td><td>2-4</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Poochyena<td>Grass</td><td>2-4</td><td>60%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Zigzagoon<td>Grass</td><td>2-4</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Zigzagoon<td>Grass</td><td>2-4</td><td>30%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Grass</td><td>2-4</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacoll<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Sharpedo<td>Super Rod</td><td>30-35</td><td>40%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>25-45</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route104">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 104</h><th></th></th></tr>
+			<tr><td>Marill<td>Grass</td><td>4-5</td><td>20%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Poochyena<td>Grass</td><td>4-5</td><td>40%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Zigzagoon<td>Grass</td><td>4-5</td><td>50%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Wurmple<td>Grass</td><td>4-5</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Wurmple<td>Grass</td><td>4</td><td>20%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Taillow<td>Grass</td><td>4-5</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Grass</td><td>3-5</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>95%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route105">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 105</h><th></th></th></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route106">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 106</h><th></th></th></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route107">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 107</h><th></th></th></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route108">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 108</h><th></th></th></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route109">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 109</h><th></th></th></tr>
+			<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route110">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 110</h><th></th></th></tr>
+			<tr><td>Oddish<td>Grass</td><td>13</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Zigzagoon<td>Grass</td><td>12</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Poochyena<td>Grass</td><td>12</td><td>20%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Grass</td><td>12</td><td>8%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Electrike<td>Grass</td><td>12-13</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Plusle<td>Grass</td><td>12-13</td><td>2%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Plusle<td>Grass</td><td>13</td><td>15%</td><td><b><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Minun<td>Grass</td><td>13</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Minun<td>Grass</td><td>12-13</td><td>2%</td><td><b><span style = "color: #0000FF;">S</span></b></td></tr>
+<tr><td>Gulpin<td>Grass</td><td>12-13</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Surfing</b></td></tr>
+<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Pelipper<td>Surfing</td><td>25-30</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td colSpan = 5><b>Fishing</b></td></tr>
+<tr><td>Tentacool<td>Old Rod</td><td>5-10</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Old Rod</td><td>5-10</td><td>70%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Tentacool<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Magikarp<td>Good Rod</td><td>10-30</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Good Rod</td><td>10-30</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+<tr><td>Wailmer<td>Super Rod</td><td>20-45</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
+		</table>
+	</div>
+	<div id = "Route111">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 111</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route112">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 112</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route113">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 113</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route114">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 114</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route115">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 115</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route116">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 116</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route117">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 117</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route118">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 118</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route119">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 119</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route120">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 120</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route121">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 121</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route122">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 122</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route123">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 123</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route124">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 124</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route125">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 125</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route126">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 126</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route127">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 127</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route128">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 128</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route129">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 129</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route130">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 130</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route131">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 131</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route132">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 132</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route133">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 133</h><th></th></th></tr>
+		</table>
+	</div>
+	<div id = "Route134">
+		<table id = "RouteTable">
+			<tr><th></th><th colSpan = 3><h>ROUTE 134</h><th></th></th></tr>
+		</table>
+	</div>
+</div>
