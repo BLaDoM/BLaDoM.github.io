@@ -1,75 +1,101 @@
 <html>
 <link href="map.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <header>
 <title>Pokemon Ruby/Sapphire/Emerald Interactive Map by BLaDoM</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 </script>
 <script>
-
-function Route(no){
+var prev = $('#route101');
+function Route(no, or){
+prev.fadeTo(100, 0);
 na = no.html();
 $('#InfoBox').html(na);
+or.fadeTo(100, 0.5);
+prev = or;
 }
+/*function Expand(){
+$('#Expander').show();
+xD = "<img src = 'data/hoenn/" + prev.attr('id') + ".png' style = 'width: auto; height: 100%;'></img>";
+$('#Expander').html(xD);
+$('#Expander').fadeTo(500, 1);
+}
+function DeExpand(){
+$('#Expander').fadeTo(500, 0);
+setTimeout(function(){
+$('#Expander').hide();
+}, 500)
+}*/
 </script>
-
+<p style = "color: white; margin-left: 30px;">Found a typo, a mistake, have a suggestion or simply some feedback? PM me on <a href = "https://www.reddit.com/message/compose/?to=BLaDoM" style = "color: #AAAAFF;">Reddit</a>.</p>
 </header>
 <body>
 <div id = "wrapper">
 <div id = "minMap">
-	<div id = "Route" style = "width: 3%; height: 7%; top: 61%; left: 15.6%;" 	onMouseOver = "Route($('#Route101'))"></div>
-	<div id = "Route" style = "width: 7%;height: 5%; top: 57%;left: 9%;" 		onMouseOver = "Route($('#Route102'))"></div>
-	<div id = "Route" style = "width: 12%;height: 5%;top: 52%;left: 16%;" 		onMouseOver = "Route($('#Route103'))"></div>
-	<div id = "Route" style = "width: 3%;height: 17%; top: 45%;left: 3%;" 		onMouseOver = "Route($('#Route104'))"></div>
-	<div id = "Route" style = "width: 3%;height: 16%;top: 62%;left: 3%;" 		onMouseOver = "Route($('#Route105'))"></div>
-	<div id = "Route" style = "width: 10%;height: 5%;top: 78%;left: 3%;" 		onMouseOver = "Route($('#Route106'))"></div>
-	<div id = "Route" style = "width: 9%;height: 5%;top: 83%;left: 13%;" 		onMouseOver = "Route($('#Route107'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 83%;left: 22%;" 		onMouseOver = "Route($('#Route108'))"></div>
-	<div id = "Route" style = "width: 3%;height: 16%;top: 72%;left: 28%;" 		onMouseOver = "Route($('#Route109'))"></div>
-	<div id = "Route" style = "width: 3%;height: 16%;top: 47%;left: 28%;" 		onMouseOver = "Route($('#Route110'))"></div>
-	<div id = "Route" style = "width: 3%;height: 30%;top: 11%;left: 28%;" 		onMouseOver = "Route($('#Route111'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 26%;left: 22%;" 		onMouseOver = "Route($('#Route112'))"></div>
-	<div id = "Route" style = "width: 12%;height: 5%;top: 11%;left: 16%;" 		onMouseOver = "Route($('#Route113'))"></div>
-	<div id = "Route" style = "width: 6%;height: 15%;top: 11%;left: 6%;" 		onMouseOver = "Route($('#Route114'))"></div>
-	<div id = "Route" style = "width: 3%;height: 15%;top: 21%;left: 3%;" 		onMouseOver = "Route($('#Route115'))"></div>
-	<div id = "Route" style = "width: 12%;height: 5%;top: 37%;left: 6%;" 		onMouseOver = "Route($('#Route116'))"></div>
-	<div id = "Route" style = "width: 9%;height: 5%;top: 42%;left: 19%;" 		onMouseOver = "Route($('#Route117'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 42%;left: 34%;" 		onMouseOver = "Route($('#Route118'))"></div>
-	<div id = "Route" style = "width: 3%;height: 31%;top: 11%;left: 37.5%;" 	onMouseOver = "Route($('#Route119'))"></div>
-	<div id = "Route" style = "width: 3%;height: 20%;top: 11%;left: 43.5%;" 	onMouseOver = "Route($('#Route120'))"></div>
-	<div id = "Route" style = "width: 13%;height: 5%;top: 26%;left: 46.5%;" 	onMouseOver = "Route($('#Route121'))"></div>
-	<div id = "Route" style = "width: 3.5%;height: 11%;top: 31%;left: 52.5%;" onMouseOver = "Route($('#Route122'))"></div>
-	<div id = "Route" style = "width: 16%;height: 5%;top: 42%;left: 40%;" 		onMouseOver = "Route($('#Route123'))"></div>
-	<div id = "Route" style = "width: 12%;height: 16%;top: 26%;left: 65.5%;" 	onMouseOver = "Route($('#Route124'))"></div>
-	<div id = "Route" style = "width: 6.5%;height: 10%;top: 26%;left: 77.5%;" onMouseOver = "Route($('#Route125'))"></div>
-	<div id = "Route" style = "width: 8.5%;height: 15%;top: 42%;left: 65.5%;" onMouseOver = "Route($('#Route126'))"></div>
-	<div id = "Route" style = "width: 10%;height: 15%;top: 42%;left: 74%;" 	onMouseOver = "Route($('#Route127'))"></div>
-	<div id = "Route" style = "width: 13%;height: 6%;top: 57%;left: 74%;" 		onMouseOver = "Route($('#Route128'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 63%;left: 78%;" 		onMouseOver = "Route($('#Route129'))"></div>
-	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 68%;" 		onMouseOver = "Route($('#Route130'))"></div>
-	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 59%;" 		onMouseOver = "Route($('#Route131'))"></div>
-	<div id = "Route" style = "width: 6%;height: 5%;top: 63%;left: 50%;" 		onMouseOver = "Route($('#Route132'))"></div>
-	<div id = "Route" style = "width: 9%;height: 5%;top: 63%;left: 41%;" 		onMouseOver = "Route($('#Route133'))"></div>
-	<div id = "Route" style = "width: 10%;height: 5%;top: 63%;left: 31%;" 		onMouseOver = "Route($('#Route134'))"></div>
-	<div id = "Route" style = "width: 3%;height: 5%;top: 68%;left: 15.6%;" 	onMouseOver = "Route($('#LittlerootTown'))"></div>
-	<div id = "Route" style = "width: 3%;height: 5%;top: 57%;left: 15.6%;" 	onMouseOver = "Route($('#OldaleTown'))"></div>
-	<div id = "Route" style = "width: 3%;height: 5%;top: 57%;left: 6%;" 			onMouseOver = "Route($('#PetalburgCity'))"></div>
-	<div id = "Route" style = "width: 3%;height: 11%;top: 36%;left: 3%;" 		onMouseOver = "Route($('#RustboroCity'))"></div>
-	<div id = "Route" style = "width: 4%;height: 5%;top: 83%;left: 9%;" 			onMouseOver = "Route($('#DewfordTown'))"></div>
-	<div id = "Route" style = "width: 3%;height: 10%;top: 62%;left: 28%;" 		onMouseOver = "Route($('#SlateportCity'))"></div>
-	<div id = "Route" style = "width: 6%;height: 6%;top: 41%;left: 28%;" 		onMouseOver = "Route($('#MauvilleCity'))"></div>
-	<div id = "Route" style = "width: 4%;height: 5%;top: 42%;left: 15%;" 		onMouseOver = "Route($('#VerdanturfTown'))"></div>
-	<div id = "Route" style = "width: 4%;height: 5%;top: 11%;left: 12%;" 		onMouseOver = "Route($('#FallarborTown'))"></div>
-	<div id = "Route" style = "width: 4%;height: 5%;top: 26%;left: 18%;" 		onMouseOver = "Route($('#LavaridgeTown'))"></div>
-	<div id = "Route" style = "width: 4%;height: 5%;top: 11%;left: 40%;" 		onMouseOver = "Route($('#FortreeCity'))"></div>
-	<div id = "Route" style = "width: 7%;height: 5%;top: 26%;left: 59%;" 		onMouseOver = "Route($('#LilicoveCity'))"></div>
-	<div id = "Route" style = "width: 6.5%;height: 6%;top: 36%;left: 77.5%;" 	onMouseOver = "Route($('#MossdeepCity'))"></div>
-	<div id = "Route" style = "width: 4%;height: 6%;top: 46%;left: 68%;" 		onMouseOver = "Route($('#SootopolisCity'))"></div>
-	<div id = "Route" style = "width: 3%;height: 5%;top: 63%;left: 56%;" 		onMouseOver = "Route($('#PacifidlogTown'))"></div>
-	<div id = "Route" style = "width: 4%;height: 11%;top: 52%;left: 87%;" 		onMouseOver = "Route($('#EverGrandeCity'))"></div>
+<div id = "Expander" style = "position: absolute; z-index: 420" onmousemove = "DeExpand()">
+</div>
+<div id = "InvisibleZones">
+	<div id = "route101" style = "opacity: 0; background-color: red; position: absolute; width: 3%; height: 7%; top: 61%; left: 15.6%;" 			onMouseOver = "Route($('#Route101'), $('#route101'))"></div>
+	<div id = "route102" style = "opacity: 0; background-color: red; position: absolute; width: 7%;height: 5%; top: 57%;left: 9%;" 					onMouseOver = "Route($('#Route102'), $('#route102'))"></div>
+	<div id = "route103" style = "opacity: 0; background-color: red; position: absolute; width: 12%;height: 5%;top: 52%;left: 16%;" 				onMouseOver = "Route($('#Route103'), $('#route103'))"></div>
+	<div id = "route104" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 17%; top: 45%;left: 3%;" 				onMouseOver = "Route($('#Route104'), $('#route104'))"></div>
+	<div id = "route105" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 16%;top: 62%;left: 3%;" 				onMouseOver = "Route($('#Route105'), $('#route105'))"></div>
+	<div id = "route106" style = "opacity: 0; background-color: red; position: absolute; width: 10%;height: 5%;top: 78%;left: 3%;" 				onMouseOver = "Route($('#Route106'), $('#route106'))"></div>
+	<div id = "route107" style = "opacity: 0; background-color: red; position: absolute; width: 9%;height: 5%;top: 83%;left: 13%;" 				onMouseOver = "Route($('#Route107'), $('#route107'))"></div>
+	<div id = "route108" style = "opacity: 0; background-color: red; position: absolute; width: 6%;height: 5%;top: 83%;left: 22%;" 				onMouseOver = "Route($('#Route108'), $('#route108'))"></div>
+	<div id = "route109" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 16%;top: 72%;left: 28%;" 				onMouseOver = "Route($('#Route109'), $('#route109'))"></div>
+	<div id = "route110" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 16%;top: 47%;left: 28%;" 				onMouseOver = "Route($('#Route110'), $('#route110'))"></div>
+	<div id = "route111" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 30%;top: 11%;left: 28%;" 				onMouseOver = "Route($('#Route111'), $('#route111'))"></div>
+	<div id = "route112" style = "opacity: 0; background-color: red; position: absolute; width: 6%;height: 5%;top: 26%;left: 22%;" 				onMouseOver = "Route($('#Route112'), $('#route112'))"></div>
+	<div id = "route113" style = "opacity: 0; background-color: red; position: absolute; width: 12%;height: 5%;top: 11%;left: 16%;" 				onMouseOver = "Route($('#Route113'), $('#route113'))"></div>
+	<div id = "route114" style = "opacity: 0; background-color: red; position: absolute; width: 6%;height: 15%;top: 11%;left: 6%;" 				onMouseOver = "Route($('#Route114'), $('#route114'))"></div>
+	<div id = "route115" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 15%;top: 21%;left: 3%;" 				onMouseOver = "Route($('#Route115'), $('#route115'))"></div>
+	<div id = "route116" style = "opacity: 0; background-color: red; position: absolute; width: 12%;height: 5%;top: 37%;left: 6%;" 				onMouseOver = "Route($('#Route116'), $('#route116'))"></div>
+	<div id = "route117" style = "opacity: 0; background-color: red; position: absolute; width: 9%;height: 5%;top: 42%;left: 19%;" 				onMouseOver = "Route($('#Route117'), $('#route117'))"></div>
+	<div id = "route118" style = "opacity: 0; background-color: red; position: absolute; width: 6%;height: 5%;top: 42%;left: 34%;" 				onMouseOver = "Route($('#Route118'), $('#route118'))"></div>
+	<div id = "route119" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 31%;top: 11%;left: 37.5%;" 			onMouseOver = "Route($('#Route119'), $('#route119'))"></div>
+	<div id = "route120" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 20%;top: 11%;left: 43.5%;" 			onMouseOver = "Route($('#Route120'), $('#route120'))"></div>
+	<div id = "route121" style = "opacity: 0; background-color: red; position: absolute; width: 13%;height: 5%;top: 26%;left: 46.5%;" 			onMouseOver = "Route($('#Route121'), $('#route121'))"></div>
+	<div id = "route122" style = "opacity: 0; background-color: red; position: absolute; width: 3.5%;height: 11%;top: 31%;left: 52.5%;" 			onMouseOver = "Route($('#Route122'), $('#route122'))"></div>
+	<div id = "route123" style = "opacity: 0; background-color: red; position: absolute; width: 16%;height: 5%;top: 42%;left: 40%;" 				onMouseOver = "Route($('#Route123'), $('#route123'))"></div>
+	<div id = "route124" style = "opacity: 0; background-color: red; position: absolute; width: 12%;height: 16%;top: 26%;left: 65.5%;" 			onMouseOver = "Route($('#Route124'), $('#route124'))"></div>
+	<div id = "route125" style = "opacity: 0; background-color: red; position: absolute; width: 6.5%;height: 10%;top: 26%;left: 77.5%;" 			onMouseOver = "Route($('#Route125'), $('#route125'))"></div>
+	<div id = "route126" style = "opacity: 0; background-color: red; position: absolute; width: 8.5%;height: 15%;top: 42%;left: 65.5%;" 			onMouseOver = "Route($('#Route126'), $('#route126'))"></div>
+	<div id = "route127" style = "opacity: 0; background-color: red; position: absolute; width: 10%;height: 15%;top: 42%;left: 74%;" 				onMouseOver = "Route($('#Route127'), $('#route127'))"></div>
+	<div id = "route128" style = "opacity: 0; background-color: red; position: absolute; width: 13%;height: 6%;top: 57%;left: 74%;" 				onMouseOver = "Route($('#Route128'), $('#route128'))"></div>
+	<div id = "route129" style = "opacity: 0; background-color: red; position: absolute; width: 6%;height: 5%;top: 63%;left: 78%;" 				onMouseOver = "Route($('#Route129'), $('#route129'))"></div>
+	<div id = "route130" style = "opacity: 0; background-color: red; position: absolute; width: 10%;height: 5%;top: 63%;left: 68%;" 				onMouseOver = "Route($('#Route130'), $('#route130'))"></div>
+	<div id = "route131" style = "opacity: 0; background-color: red; position: absolute; width: 9%;height: 5%;top: 63%;left: 59%;" 				onMouseOver = "Route($('#Route131'), $('#route131'))"></div>
+	<div id = "route132" style = "opacity: 0; background-color: red; position: absolute; width: 6%;height: 5%;top: 63%;left: 50%;" 				onMouseOver = "Route($('#Route132'), $('#route132'))"></div>
+	<div id = "route133" style = "opacity: 0; background-color: red; position: absolute; width: 9%;height: 5%;top: 63%;left: 41%;" 				onMouseOver = "Route($('#Route133'), $('#route133'))"></div>
+	<div id = "route134" style = "opacity: 0; background-color: red; position: absolute; width: 10%;height: 5%;top: 63%;left: 31%;" 				onMouseOver = "Route($('#Route134'), $('#route134'))"></div>
+	<div id = "littleroottown" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 5%;top: 68%;left: 15.6%;" 		onMouseOver = "Route($('#LittlerootTown'), $('#littleroottown'))"></div>
+	<div id = "oldaletown" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 5%;top: 57%;left: 15.6%;" 			onMouseOver = "Route($('#OldaleTown'), $('#oldaletown'))"></div>
+	<div id = "petalburgcity" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 5%;top: 57%;left: 6%;" 			onMouseOver = "Route($('#PetalburgCity'), $('#petalburgcity'))"></div>
+	<div id = "rustbotocity" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 11%;top: 36%;left: 3%;" 			onMouseOver = "Route($('#RustboroCity'), $('#rustbotocity'))"></div>
+	<div id = "dewfordtown" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 5%;top: 83%;left: 9%;" 				onMouseOver = "Route($('#DewfordTown'), $('#dewfordtown'))"></div>
+	<div id = "slateportcity" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 10%;top: 62%;left: 28%;" 			onMouseOver = "Route($('#SlateportCity'), $('#slateportcity'))"></div>
+	<div id = "mauvillecity" style = "opacity: 0; background-color: red; position: absolute; width: 6%;height: 6%;top: 41%;left: 28%;" 			onMouseOver = "Route($('#MauvilleCity'), $('#mauvillecity'))"></div>
+	<div id = "verdanturftown" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 5%;top: 42%;left: 15%;" 		onMouseOver = "Route($('#VerdanturfTown'), $('#verdanturftown'))"></div>
+	<div id = "fallarbortown" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 5%;top: 11%;left: 12%;" 			onMouseOver = "Route($('#FallarborTown'), $('#fallarbortown'))"></div>
+	<div id = "lavaridgetown" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 5%;top: 26%;left: 18%;" 			onMouseOver = "Route($('#LavaridgeTown'), $('#lavaridgetown'))"></div>
+	<div id = "fortreecity" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 5%;top: 11%;left: 40%;" 				onMouseOver = "Route($('#FortreeCity'), $('#fortreecity'))"></div>
+	<div id = "lilicovecity" style = "opacity: 0; background-color: red; position: absolute; width: 7%;height: 5%;top: 26%;left: 59%;" 				onMouseOver = "Route($('#LilicoveCity'), $('#lilicovecity'))"></div>
+	<div id = "mossdeepcity" style = "opacity: 0; background-color: red; position: absolute; width: 6.5%;height: 6%;top: 36%;left: 77.5%;" 	onMouseOver = "Route($('#MossdeepCity'), $('#mossdeepcity'))"></div>
+	<div id = "sootopoliscity" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 6%;top: 46%;left: 68%;" 			onMouseOver = "Route($('#SootopolisCity'), $('#sootopoliscity'))"></div>
+	<div id = "pacifidlogtown" style = "opacity: 0; background-color: red; position: absolute; width: 3%;height: 5%;top: 63%;left: 56%;" 			onMouseOver = "Route($('#PacifidlogTown'), $('#pacifidlogtown'))"></div>
+	<div id = "evergrandecity" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 11%;top: 52%;left: 87%;" 		onMouseOver = "Route($('#EverGrandeCity'), $('#evergrandecity'))"></div>
+	<div id = "petalburgwoods" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 11%;top: 52%;left: 87%;" 		onMouseOver = "Route($('#PetalburgWoods'), $('#petalburgwoods'))"></div>
+	<div id = "rusturftunnel" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 11%;top: 52%;left: 87%;" 			onMouseOver = "Route($('#RusturfTunnel'), $('#rusturftunnel'))"></div>
+	<div id = "islandcave" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 11%;top: 52%;left: 87%;" 			onMouseOver = "Route($('#IslandCave'), $('#islandcave'))"></div>
+	<div id = "granitecave" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 11%;top: 52%;left: 87%;" 			onMouseOver = "Route($('#GraniteCave'), $('#granitecave'))"></div>
+	<div id = "abandonedship" style = "opacity: 0; background-color: red; position: absolute; width: 4%;height: 11%;top: 52%;left: 87%;" 		onMouseOver = "Route($('#AbandonedShip'), $('#abandonedship'))"></div>
+	</div>
+</div>
 </div>
 <div id = "InfoBox">
-	Hover over a part of the map to see the encounters in that area
+	Hover over a part of the map to get information about that area
 	</div>
 </div>
 </body>
@@ -77,7 +103,7 @@ $('#InfoBox').html(na);
 <div id = "RouteContainer" style = "display: none;">
 <div id = "LittlerootTown">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Littleroot Town</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Littleroot Town</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
 <tr><td>Chikorita<td>Gift</td><td>5</td><td>Only One</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -92,7 +118,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "PetalburgCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Petalburg City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Petalburg City</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Marill<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -107,7 +133,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "RustboroCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Rustboro City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Rustboro City</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
 <tr><td>Lileep<td>Root Fossil</td><td>20</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -118,7 +144,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "DewfordTown">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Dewford Town</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Dewford Town</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -135,7 +161,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "SlateportCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Slateport City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Slateport City</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -152,22 +178,22 @@ $('#InfoBox').html(na);
 </div>
 <div id = "MauvilleCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Mauville City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Mauville City</h><th></th></th></tr>
 	</table>
 </div>
 <div id = "VerdanturfTown">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Verdanturf Town</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Verdanturf Town</h><th></th></th></tr>
 	</table>
 </div>
 <div id = "FallarborTown">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Fallarbor Town</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Fallarbor Town</h><th></th></th></tr>
 	</table>
 </div>
 <div id = "LavaridgeTown">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Lavaridge Town</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Lavaridge Town</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Special Pokémon</b></td></tr>
 <tr><td>Wynaut<td>Egg</td><td>5</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -175,7 +201,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "FortreeCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Fortree City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Fortree City</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Skitty<td>Trade Pikachu</td><td>1-100</td><td>Only One</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
 <tr><td>Plusle<td>Trade Volbeat</td><td>1-100</td><td>Only One</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -183,7 +209,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "LilicoveCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Lilicove City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Lilicove City</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -199,7 +225,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "MossdeepCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Mossdeep City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Mossdeep City</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -217,7 +243,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "SootopolisCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Sootopolis City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Sootopolis City</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -231,7 +257,7 @@ $('#InfoBox').html(na);
 	</div>
 <div id = "PacifidlogTown">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Paciflidlog Town</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Paciflidlog Town</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -250,7 +276,7 @@ $('#InfoBox').html(na);
 </div>
 <div id = "EverGrandeCity">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>Ever Grande City</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>Ever Grande City</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Magikarp<td>Surfing</td><td>5-35</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -267,7 +293,7 @@ $('#InfoBox').html(na);
 </div>
 	<div id = "Route101">
 			<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 101</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 101</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td>Poochyena<td>Grass</td><td>2-3</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
 <tr><td>Poochyena<td>Grass</td><td>2-3</td><td>45%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -282,7 +308,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route102">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 102</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 102</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Poochyena<td>Grass</td><td>3-4</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
 <tr><td>Poochyena<td>Grass</td><td>3-4</td><td>30%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -312,7 +338,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route103">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 103</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 103</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Poochyena<td>Grass</td><td>2-4</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
 <tr><td>Poochyena<td>Grass</td><td>2-4</td><td>60%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -335,7 +361,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route104">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 104</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 104</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Marill<td>Grass</td><td>4-5</td><td>20%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Poochyena<td>Grass</td><td>4-5</td><td>40%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -355,7 +381,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route105">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 105</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 105</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -372,7 +398,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route106">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 106</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 106</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -388,7 +414,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route107">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 107</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 107</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -404,7 +430,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route108">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 108</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 108</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -420,7 +446,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route109">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 109</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 109</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -436,7 +462,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route110">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 110</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 110</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Oddish<td>Grass</td><td>13</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Zigzagoon<td>Grass</td><td>12</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
@@ -463,7 +489,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route111">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 111</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 111</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Sandshrew<td>Deep Sand</td><td>19-21</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Trapinch<td>Deep Sand</td><td>19-21</td><td>20%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -487,7 +513,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route112">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 112</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 112</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Machop<td>Grass</td><td>14-16</td><td>25%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
 <tr><td>Marill<td>Grass</td><td>14-16</td><td>25%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -496,7 +522,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route113">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 113</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 113</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Sandshrew<td>Grass</td><td>14-16</td><td>25%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
 <tr><td>Slugma<td>Grass</td><td>14-16</td><td>25%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -506,7 +532,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route114">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 114</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 114</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Lotad<td>Grass</td><td>15-16</td><td>30%</td><td><b><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Lombre<td>Grass</td><td>16-18</td><td>10%</td><td><b><span style = "color: #0000FF;">S</span></b></td></tr>
@@ -539,7 +565,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route115">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 115</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 115</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Jigglypuff<td>Grass</td><td>24-25</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Taillow<td>Grass</td><td>23-25</td><td>40%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -561,7 +587,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route116">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 116</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 116</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Abra<td>Grass</td><td>7</td><td>10%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Poochyena<td>Grass</td><td>6-8</td><td>28%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -578,7 +604,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route117">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 117</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 117</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Oddish<td>Grass</td><td>13</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span></b></td></tr>
 <tr><td>Oddish<td>Grass</td><td>13-14</td><td>40%</td><td><b><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -610,7 +636,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route118">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 118</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 118</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Zigzagoon<td>Grass</td><td>24-26</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Linoone<td>Grass</td><td>26</td><td>10%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -634,7 +660,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route119">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 119</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 119</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Oddish<td>Long Grass</td><td>24-27</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Zigzagoon<td>Long Grass</td><td>25-27</td><td>30%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -664,7 +690,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route120">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 120</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 120</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Oddish<td>Long Grass</td><td>25-27</td><td>25%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Marill<td>Long Grass</td><td>25-27</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -693,7 +719,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route121">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 121</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 121</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Oddish<td>Grass</td><td>26-28</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Gloom<td>Grass</td><td>28</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -720,7 +746,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route122">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 122</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 122</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -737,7 +763,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route123">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 123</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 123</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Oddish<td>Grass</td><td>26-28</td><td>15%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Gloom<td>Grass</td><td>28</td><td>5%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -764,7 +790,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route124">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 124</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 124</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -786,7 +812,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route125">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 125</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 125</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -803,7 +829,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route126">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 126</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 126</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -824,7 +850,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route127">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 127</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 127</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -841,7 +867,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route128">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 128</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 128</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td>Wingull<td>Surfing</td><td>10-30</td><td>35%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -859,7 +885,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route129">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 129</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 129</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -880,7 +906,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route130">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 130</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 130</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td>Wynaut<td>Grass</td><td>5, 10, 15, 20, 25, 30, 35, 10, 45, 50</td><td>100%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
 <tr><td colSpan = 5><b>Surfing</b></td></tr>
@@ -899,7 +925,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route131">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 131</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 131</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -917,7 +943,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route132">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 132</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 132</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -936,7 +962,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route133">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 133</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 133</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 <tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
@@ -955,7 +981,7 @@ $('#InfoBox').html(na);
 	</div>
 	<div id = "Route134">
 		<table id = "RouteTable">
-			<tr><th></th><th colSpan = 3><h>ROUTE 134</h><th></th></th></tr>
+			<tr><th><i class="fa fa-arrow-up" onClick = "Expand()"></i></th><th colSpan = 3><h>ROUTE 134</h><th></th></th></tr>
 			<tr><td>Pokémon</td><td>Location</td><td>Levels</td><td>Rate</td><td>Games</td></tr>
 			<tr><td colSpan = 5><b>Surfing</b></td></tr>
 <tr><td>Tentacool<td>Surfing</td><td>5-35</td><td>60%</td><td><b><span style = "color: #FF0000;">R</span><span style = "color: #0000FF;">S</span><span style = "color: #00FF00;">E</span></b></td></tr>
