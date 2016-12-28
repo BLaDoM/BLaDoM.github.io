@@ -7,9 +7,10 @@ body{
 
 #minMap{
 	
+	margin: 50px auto;
 	top: 0px;
 	left: 30px;
-	position: relative;
+	position: fixed;
 	display: block;
 	width: 900px;
 	height: 542px;
@@ -20,11 +21,19 @@ body{
 		
 }
 
+#InvisibleZones{
+	
+}
+
 #Route{
 	
 	position: absolute;
-	opacity: 0;
-	background-color: red;
+	
+}
+
+#DestailedMap{
+	
+	
 	
 }
 
