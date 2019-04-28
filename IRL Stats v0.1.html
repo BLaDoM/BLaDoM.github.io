@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simply's Life Tracker: TOP SECRET</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <p>Simply's Life Tracker</p>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+	<select id="ActivityType">
+		<option value="B5:D">Gaming</option>
+		<option value="F5:H">Useful Hobby</option>
+		<option value="J5:L">Working</option>
+		<option value="N5:P">Social</option>
+		<option value="R5:T">Other</option>
+		<option value="V5:X">Background Task</option>
+	</select>
+	<input type="text" id="ActivityName"></input>
+	<button id="SendActivity">Send Activity</button>
+
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+
+    <script type="text/javascript">
+      // Client ID and API key from the Developer Console
+      var CLIENT_ID = '577967747026-57t00iia28et6vmgtj5jg8p4fe15i43e.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyDQpiPLMDw-gv8kosUfKwxad4QNhAyBdS0';
+
+      // Array of API discovery doc URLs for APIs used by the quickstart
+      var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+
+      // Authorization scopes required by the API; multiple scopes can be
+      // included, separated by spaces.
+      var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
+
+      var authorizeButton = document.getElementById('authorize_button');
+      var signoutButton = document.getElementById('signout_button');
+	  
+	  var cmdType = document.getElementById('ActivityType');
+	  var txtActName = document.getElementById('ActivityName');
+	  var btnSend = document.getElementById('SendActivity');
+
+      /**
+       *  On load, called to load the auth2 library and API client library.
+       */
+      function handleClientLoad() {
+        gapi.load('client:auth2', initClient);
+      }
+
+      /**
+       *  Initializes the API client library and sets up sign-in state
+       *  listeners.
+       */
+      function initClient() {
+        gapi.client.init({
+          apiKey: API_KEY,
+          clientId: CLIENT_ID,
+          discoveryDocs: DISCOVERY_DOCS,
+          scope: SCOPES
+        }).then(function () {
+          // Listen for sign-in state changes.
+          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+          // Handle the initial sign-in state.
+          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          authorizeButton.onclick = handleAuthClick;
+          signoutButton.onclick = handleSignoutClick;
+		  btnSend.onclick = sendActivity;
+        }, function(error) {
+          appendPre(JSON.stringify(error, null, 2));
+        });
+      }
+
+      /**
+       *  Called when the signed in status changes, to update the UI
+       *  appropriately. After a sign-in, the API is called.
+       */
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          authorizeButton.style.display = 'none';
+          signoutButton.style.display = 'block';
+        } else {
+          authorizeButton.style.display = 'block';
+          signoutButton.style.display = 'none';
+        }
+      }
+
+      /**
+       *  Sign in the user upon button click.
+       */
+      function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+      }
+
+      /**
+       *  Sign out the user upon button click.
+       */
+      function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+      }
+
+		function sendActivity() {
+			var ix;
+			var range = 'Time allocation data!' + cmdType.value;
+			gapi.client.sheets.spreadsheets.values.get({
+			  spreadsheetId: '1XJf58kS6GEaggU-V-hWOlPc3q1Z8C81xrP-2Y2DLHOI',
+			  range: range,
+			}).then(function(response) {
+				ix = response.result.values.length;
+				var resRange = response.result;
+				  if (resRange.values.length > 0) {
+					for (i = 0; i < resRange.values.length; i++) {
+					  var row = resRange.values[i];
+					  // Print columns A and E, which correspond to indices 0 and 4.
+					  if(row[0] == txtActName.value)
+						if(row[2] == undefined){
+							appendPre(row[1]);
+							row[2] = getDateTimeString();
+							write(range.replace('5', i+5), row)
+							return;
+							}}
+					}
+				write(range.replace('5', ix+5), [txtActName.value, getDateTimeString(), ""])
+			})
+		}
+
+		function getDateTimeString() {
+			Date.prototype.ddmmyyyy = function() {
+			  var mm = this.getMonth() + 1; // getMonth() is zero-based
+			  var dd = this.getDate();
+
+			  return [(dd>9 ? '' : '0') + dd,
+					  (mm>9 ? '' : '0') + mm,
+					  this.getFullYear()
+					 ].join('/');
+			};
+			
+			Date.prototype.hhmmss = function() {
+				var hh = this.getHours();
+				var mm = this.getMinutes();
+				var ss = this.getSeconds();
+				
+				return [(hh>9 ? '' : '0') + hh,
+					  (mm>9 ? '' : '0') + mm,
+					  (ss>9 ? '' : '0') + ss
+					 ].join(':');
+			};
+
+			var date = new Date();
+			return date.ddmmyyyy() + " " + date.hhmmss();
+		}
+
+      function appendPre(message) {
+        var pre = document.getElementById('content');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+	  
+	  function write(newRange, values) {
+		var params = {
+        spreadsheetId: '1XJf58kS6GEaggU-V-hWOlPc3q1Z8C81xrP-2Y2DLHOI',
+        range: newRange,
+        valueInputOption: 'USER_ENTERED',
+		  };
+
+		  var valueRangeBody = {
+			"majorDimension": "ROWS",
+			  "range": newRange,
+			  "values": [values]
+		  };
+
+		  var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
+		  request.then(function(response) {
+			// TODO: Change code below to process the `response` object:
+			console.log(response.result);
+		  }, function(reason) {
+			console.error('error: ' + reason.result.error.message);
+		  });
+	  }
+
+    </script>
+
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+  </body>
+</html>
