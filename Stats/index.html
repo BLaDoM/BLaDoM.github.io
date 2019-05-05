@@ -15,8 +15,9 @@
 		<option value="F5:I">Useful Hobby</option>
 		<option value="J5:M">Working</option>
 		<option value="N5:Q">Social</option>
-		<option value="R5:U">Other</option>
-		<option value="V5:Y">Background Task</option>
+		<option value="R5:U">Entertainment</option>
+		<option value="V5:Y">Life Necessity</option>
+		<option value="Z5:AB">Other</option>
 	</select>
 	Type<br>
 	<input type="text" id="ActivityName"></input>
@@ -117,7 +118,7 @@
 			buttonCont.removeChild(buttonCont.firstChild);
 		}
 		
-		var rangeList = ["Time allocation data!B5:E", "Time allocation data!F5:I", "Time allocation data!J5:M", "Time allocation data!N5:Q", "Time allocation data!R5:U", "Time allocation data!V5:Y"];
+		var rangeList = ["Time allocation data!B5:E", "Time allocation data!F5:I", "Time allocation data!J5:M", "Time allocation data!N5:Q", "Time allocation data!R5:U", "Time allocation data!V5:Y", "Time allocation data!Z5:AB"];
 			for(range in rangeList) {
 				gapi.client.sheets.spreadsheets.values.get({
 				  spreadsheetId: SPREADSHEETID,
