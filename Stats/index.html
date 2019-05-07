@@ -28,6 +28,13 @@
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 	<pre id="log" style="white-space: pre-wrap;"></pre>
+	
+	Thought<br>
+	<input type="text" id="thoughtText">
+	<br>Feeling Intensity<br>
+	<input type="text" id="thoughtFeel">
+	<input type="range" min="-20" max="20" value="0" class="slider" id="thoughtIntensity"><br>
+	<button id="thoughtBtn">Thought</button>
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
@@ -49,18 +56,15 @@
 	  var txtActName = document.getElementById('ActivityName');
 	  var txtActWaste = document.getElementById('Wasted Time');
 	  var btnSend = document.getElementById('SendActivity');
+	  var txtThoughtText = document.getElementById('thoughtText');
+	  var txtThoughtFeel = document.getElementById('thoughtFeel');
+	  var sliderThought = document.getElementById('thoughtIntensity');
+	  var btnThink = document.getElementById('thoughtBtn');
 
-      /**
-       *  On load, called to load the auth2 library and API client library.
-       */
       function handleClientLoad() {
         gapi.load('client:auth2', initClient);
       }
 
-      /**
-       *  Initializes the API client library and sets up sign-in state
-       *  listeners.
-       */
       function initClient() {
         gapi.client.init({
           apiKey: API_KEY,
@@ -76,6 +80,7 @@
           authorizeButton.onclick = handleAuthClick;
           signoutButton.onclick = handleSignoutClick;
 		  btnSend.onclick = sendActivityClick;
+		  btnThink.onclick = onthink;
 		  
 		  populateStarted();
         }, function(error) {
@@ -83,10 +88,14 @@
         });
       }
 
-      /**
-       *  Called when the signed in status changes, to update the UI
-       *  appropriately. After a sign-in, the API is called.
-       */
+		function onthink() {
+			think(txtThoughtText.value, txtThoughtFeel.value, sliderThought.value);
+		}
+
+		function think(text, feel, intensity) {
+			write("Journal!P6:S", [getDateTimeString(), text, feel, intensity] 'Brained at ' + getDateTimeString());
+		}
+
       function updateSigninStatus(isSignedIn) {
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
@@ -97,16 +106,10 @@
         }
       }
 
-      /**
-       *  Sign in the user upon button click.
-       */
       function handleAuthClick(event) {
         gapi.auth2.getAuthInstance().signIn();
       }
 
-      /**
-       *  Sign out the user upon button click.
-       */
       function handleSignoutClick(event) {
         gapi.auth2.getAuthInstance().signOut();
       }
@@ -160,9 +163,7 @@
 							return;
 						}}
 					}
-				write(range.replace('5', ix+5), [actName, getDateTimeString(), "", ""]);
-				appendPre('Created activity: ' + actName + ' from ' + getDateTimeString(), 'log');
-				populateStarted();
+				write(range.replace('5', ix+5), [actName, getDateTimeString(), "", ""], 'Created activity: ' + actName + ' from ' + getDateTimeString());
 			})
 		}
 
@@ -214,7 +215,7 @@
 		appendPre(title + ' closed.', 'log');
 	  }
 	  
-	  function write(newRange, values) {
+	  function write(newRange, values, message="") {
 		var params = {
         spreadsheetId: SPREADSHEETID,
         range: newRange,
@@ -229,8 +230,9 @@
 
 		  var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
 		  request.then(function(response) {
-			// TODO: Change code below to process the `response` object:
+			appendPre(message, 'log');
 			console.log(response.result);
+			populateStarted();
 		  }, function(reason) {
 			console.error('error: ' + reason.result.error.message);
 		  });
