@@ -30,10 +30,10 @@
 	<pre id="log" style="white-space: pre-wrap;"></pre>
 	
 	Thought<br>
-	<input type="text" id="thoughtText">
+	<input type="text" id="thoughtText"></input>
 	<br>Feeling Intensity<br>
-	<input type="text" id="thoughtFeel">
-	<input type="range" min="-20" max="20" value="0" class="slider" id="thoughtIntensity"><br>
+	<input type="text" id="thoughtFeel"></input>
+	<input type="range" min="-20" max="20" value="0" class="slider" id="thoughtIntensity"></input><br>
 	<button id="thoughtBtn">Thought</button>
 
     <script type="text/javascript">
@@ -93,7 +93,14 @@
 		}
 
 		function think(text, feel, intensity) {
-			write("Journal!P6:S", [getDateTimeString(), text, feel, intensity] 'Brained at ' + getDateTimeString());
+			var newRange = "Journal!P6:S";
+			gapi.client.sheets.spreadsheets.values.get({
+				  spreadsheetId: SPREADSHEETID,
+				  range: newRange,
+				}).then(function(response) {
+					var ix = response.result.values.length;
+					  write(newRange.replace('6', ix+1), [getDateTimeString(), text, feel, intensity], 'Brained at ' + getDateTimeString());
+					}});
 		}
 
       function updateSigninStatus(isSignedIn) {
