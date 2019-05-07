@@ -98,9 +98,8 @@
 				  spreadsheetId: SPREADSHEETID,
 				  range: newRange,
 				}).then(function(response) {
-					var ix = response.result.values.length;
-					  write(newRange.replace('6', ix+1), [getDateTimeString(), text, feel, intensity], 'Brained at ' + getDateTimeString());
-					}});
+					  write(newRange.replace('6', response.result.values.length+6), [getDateTimeString(), text, feel, intensity], 'Brained at ' + getDateTimeString());
+					});
 		}
 
       function updateSigninStatus(isSignedIn) {
