@@ -18,7 +18,6 @@
             .padded {padding:8px;}
             .section {margin: 4px; padding: 4px 8px 4px 8px; background-color: rgb(43, 44, 42); border-radius: 8px;}
             .cmb-btn {color: #ffffff;}
-            .cmb-btn:hover { border-color: red; }
             .gaming { background-color: #302381; border-color: #302381;}
             .hobby { background-color: #85200c; border-color: #85200c;}
             .work { background-color: #b45f06;}
@@ -26,13 +25,13 @@
             .entertainment { background-color: #1155cc;}
             .life { background-color: #ffffff; color: #000000;}
             .other { background-color: #cc6cc0;}
-            .activity.card { background-color: rgb(24, 26, 27); max-width: 18rem; max-height: 18rem; border-radius: 8px; margin: 8px;}
+            .activity.card { background-color: rgb(24, 26, 27); max-width: 18rem; max-height: 18rem; min-width: 16rem; border-radius: 8px; margin: 8px;}
             .card-header:first-child { border-radius: 8px 8px 0 0;}
             .card-footer.full-flex { display: flex; padding: 0;}
             .half-flex-btn { flex: 50%; margin: -1px; border-radius: 0;}
             .half-flex-btn.left { border-bottom-left-radius: 8px;}
             .half-flex-btn.right { border-bottom-right-radius: 8px;}
-            .section.card-deck { padding: 8px;}
+            .section.card-deck { padding: 8px; display: flex; flex-wrap: wrap;}
             .center { text-align: center;}
         </style>
     </head>
@@ -49,7 +48,7 @@
             <br>
             <div class="section">
 
-                <div class="btn-group" data-toggle="buttons">
+                <div class="btn-group spaced" data-toggle="buttons">
 			
                     <label class="btn cmb-btn gaming active">
                         <input type="radio" name="activityCat" value="0" autocomplete="off" checked>
@@ -97,33 +96,26 @@
                 <button type="button" class="spaced btn btn-success" id="btn_send_activity" onclick="sendActivityClick();">Send Activity</button>
             </div>
             <div id="activitiesDeck" class="section card-deck">
-                <template id="activityCard">
-                    <div class="activity card">
-                        <div class="card-header hobby" style="margin: -1px;">
-                            <h5 class="card-title">Example Activity</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Category</h6>
+
+                <template id="actCard-template">
+                    <div id="actCard" class="activity card">
+                        <div id="header" class="card-header" style="margin: -1px;">
+                            <h5 id="title" class="card-title">Example Activity</h5>
+                            <h6 id="categoryName" class="card-subtitle text-muted">Category</h6>
                         </div>
-                            <div class="card-body" style="display: flex;">
+                        <div class="card-body" style="display: flex;">
                             <div class="cotainer" style="flex:-moz-available;">
-                                <div class="row">
-                                    <div class="col-sm center">28/08/2020</div>
-                                    <div class="col-sm center">28/08/2020</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm center">02:00:00</div>
-                                    <div class="col-sm center">04:00:00</div>
-                                </div>
-                                <div class="row center">
-                                    <div class="col-sm center"><br>Time elapsed: 02:00:00</div>
-                                </div>
+                                <p id="startTime" class="center">29/08/2020 11:28:32</p>
+                                <p id="ellapsedTime" class="center">Time ellapsed: 2:00:00</p>
                             </div>
                         </div>
-                            <div class="card-footer full-flex">
-                            <button type="button" class="btn btn-primary half-flex-btn left">Close Activity</button>
-                            <button type="button" class="btn btn-danger half-flex-btn right">Cancel Activity</button>
+                        <div class="card-footer full-flex">
+                            <button id="btnCloseAct" type="button" class="btn btn-primary half-flex-btn left">Close Activity</button>
+                            <button id="btnCancelAct" type="button" class="btn btn-danger half-flex-btn right">Cancel Activity</button>
                         </div>
                     </div>
                 </template>
+                
             </div>
         </div>
     </body>
@@ -148,8 +140,23 @@
         var cardDeck = document.getElementById('activitiesDeck');
 
         const TIMEDATAPAGE = "'Time allocation data'!";
-        const CATEGORYRANGES = ["B{0}:E", "F{0}:I", "J{0}:M", "N{0}:Q", "R{0}:U", "V{0}:Y", "Z{0}:AC"];
+        const CATEGORYRANGES = ["B{0}:E{1}", "F{0}:I{1}", "J{0}:M{1}", "N{0}:Q{1}", "R{0}:U{1}", "V{0}:Y{1}", "Z{0}:AC{1}"];
+        const CATEGORYCLASSES = ["gaming", "hobby", "work", "social", "entertainment", "life", "other"];
+        const CATEGORYNAMES = ["Gaming", "Useful Hobby", "Work", "Social", "Entertainment", "Life Necessity", "Other"];
         var lastUsedIX = [0, 0, 0, 0, 0, 0, 0];
+
+        var timers = []
+
+        window.onload = function() { setInterval(updateTimers, 1000);}
+
+        function onReady() {
+            fetchIXs();
+            //findOpenActivities is called through fetchIX to avoid await, async, then, callback hell
+        }
+
+        function onIXsFetched() {
+            findOpenActivities();
+        }
 
         function sendActivity(name, details, categoryIX) {
             var range = getCategoryRange(categoryIX);
@@ -166,31 +173,37 @@
                         var row = resRange.values[i];
                         
                         if(row[0] == name && row[2] == undefined)
-                            closeActivity(getCategoryRange(categoryIX, ix), row);
+                            closeActivity(getCategoryRange(categoryIX, ix, ix));
                     }
                 }
                 
                 createActivity(getCategoryRange(categoryIX, ix), name);
-
             })
         }
 
-        function closeActivity(range, row) {
-            row[2] = getDateTimeString(offset);
-            row[3] = actWaste;
-            write(range, row)
+        function closeActivity(range) {
+            var values = []
+
+            gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: SPREADSHEETID,
+                range: range,
+            }).then(function(response) {
+                values = response.result.values[0];
+
+                values[2] = getDateTimeString();
+                values[3] = txtActivityDetails.value;
+
+                write(range, values);
+            });
+        }
+
+        function cancelActivity(range) {
+            if (confirm("Are you sure you want to cancel?"))
+                write(range, ["", "", "", ""]);
         }
 
         function createActivity(range, name) {
             write(range, [name, "DATE", "", ""], 'Created activity: ' + name + ' from ' + "DATE");
-        }
-
-        function onReady() {
-            fetchIXs();
-
-            var inst = document.getElementsByTagName("template")[0];
-            var clone = inst.content.cloneNode(true);
-            cardDeck.appendChild(clone);
         }
 
         function fetchIXs() {
@@ -201,21 +214,63 @@
         }
 
         function fetchIX(ix) {
-            var newRange = getCategoryRange(ix);
-                gapi.client.sheets.spreadsheets.values.get({
-                    spreadsheetId: SPREADSHEETID,
-                    range: newRange,
-                }).then(function(response) {
-                    lastUsedIX[ix] = response.result.values.length;
-                });
+            var newRange = getCategoryRange(ix, 5);
+            gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: SPREADSHEETID,
+                range: newRange,
+            }).then(function(response) {
+                lastUsedIX[ix] = response.result.values.length + 3; // Index points to last activity in category (the one possibly open)
+                
+                var i = 0; // If all IXs have been fetched -> onIXsFetched();
+                for (i = 0; i < CATEGORYRANGES.length; i++)
+                    if (lastUsedIX[i] == 0)
+                        return;
+
+                onIXsFetched();
+            });
         }
 
-        function getCategoryRange(ix, row = -1) {
+        function findOpenActivities() {
+            var i = 0;
+            for (i = 0; i < CATEGORYRANGES.length; i++) {
+                fetchOpenActivity(i);
+            }
+        }
+
+        function fetchOpenActivity(categoryIX) {
+            var range = getCategoryRange(categoryIX);
+
+            gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: SPREADSHEETID,
+                range: range,
+            }).then(function(response) {
+                
+                var resRange = response.result;
+                if (resRange.values.length > 0)
+                    for (i = 0; i < resRange.values.length; i++) {
+                        var row = resRange.values[i];
+                        
+                        if(row[2] == undefined)
+                            createActivityCard(row[0], row[1], categoryIX, getCategoryRange(categoryIX, lastUsedIX[categoryIX] + i, lastUsedIX[categoryIX] + i));
+                    }
+                
+            });
+        }
+
+        function getCategoryRange(ix, row = -1, finalRow = -1) {
+            var r = CATEGORYRANGES[ix];
             if (row != -1)
-                return TIMEDATAPAGE + CATEGORYRANGES[ix].replace("{0}", row.toString());
+                r = r.replace("{0}", row.toString());
+            else
+                // Since the first activity is in row 6 this actually goes 2 before the latest activity
+                r = r.replace("{0}", lastUsedIX[ix].toString());
             
-            // Since the first activity is in row 6 this actually goes 2 before the latest activity
-            return TIMEDATAPAGE + CATEGORYRANGES[ix].replace("{0}", (lastUsedIX[ix] + 5).toString());
+            if (finalRow != -1)
+                r = r.replace("{1}", finalRow.toString());
+            else
+                r = r.replace("{1}", "");
+            
+            return TIMEDATAPAGE + r;
         }
 
         function write(newRange, values) {
@@ -239,36 +294,86 @@
             });
 	    }
 
-        function getDateTimeString(offset = 0) {
-            Date.prototype.ddmmyyyy = function() {
-            var mm = this.getMonth() + 1; // getMonth() is zero-based
-            var dd = this.getDate();
-            return [(dd>9 ? '' : '0') + dd,
-                    (mm>9 ? '' : '0') + mm,
-                    this.getFullYear()
-                    ].join('/');
-            };
-            
-            Date.prototype.hhmmss = function() {
-                var hh = this.getHours();
-                var mm = this.getMinutes();
-                var ss = this.getSeconds();
-                
-                return [(hh>9 ? '' : '0') + hh,
-                    (mm>9 ? '' : '0') + mm,
-                    (ss>9 ? '' : '0') + ss
-                    ].join(':');
-            };
+        function getDateTimeString(offset = 0) {            
             var date = new Date();
             var newDate = new Date(date.getTime() + offset*1000);
             return newDate.ddmmyyyy() + " " + newDate.hhmmss();
 	    }
+
+        function createActivityCard(name, startDate, categoryIX, params) {
+            var inst = document.getElementById("actCard-template");
+            var clone = inst.content.cloneNode(true);
+            clone.querySelector("[id='header']").className += " " + CATEGORYCLASSES[categoryIX];
+            clone.querySelector("[id='title']").innerHTML = name;
+            clone.querySelector("[id='categoryName']").innerHTML = CATEGORYNAMES[categoryIX];
+            clone.querySelector("[id='startTime']").innerHTML = startDate;
+            clone.querySelector("[id='btnCloseAct']").onclick = function() { closeActivity(params)};
+            clone.querySelector("[id='btnCancelAct']").onclick = function() { cancelActivity(params)};
+            timers.push([clone.querySelector("[id='ellapsedTime']"), parseDate(startDate).getTime()]);
+            cardDeck.appendChild(clone);
+        }
+
+        function updateTimers() {
+            for (var i = 0; i < timers.length; i++) {
+                var time = new Date().getTime() - timers[i][1];
+                timers[i][0].innerHTML = msToHMS(time);
+            }
+        }
 
         // --------------------------------------------------------------------------------------
 
         function sendActivityClick() {
             var selectedCategoryIX = document.querySelector('input[name="activityCat"]:checked').value;
             sendActivity(txtActivityName.value, txtActivityDetails.value, selectedCategoryIX);
+        }
+
+        function parseDate(dateString) {
+            var date = dateString.split(' ')[0];
+            var time = dateString.split(' ')[1];
+
+            var d = new Date();
+            d.setFullYear(date.split('/')[2]);
+            d.setMonth(date.split('/')[1] - 1);
+            d.setDate(date.split('/')[0]);
+
+            d.setHours(time.split(':')[0]);
+            d.setMinutes(time.split(':')[1]);
+            d.setSeconds(time.split(':')[2]);
+
+            return d;
+        }
+
+        Date.prototype.hhmmss = function() {
+            var hh = this.getHours();
+            var mm = this.getMinutes();
+            var ss = this.getSeconds();
+            
+            return [(hh>9 ? '' : '0') + hh,
+                (mm>9 ? '' : '0') + mm,
+                (ss>9 ? '' : '0') + ss
+                ].join(':');
+        };
+
+        Date.prototype.ddmmyyyy = function() {
+            var mm = this.getMonth() + 1; // getMonth() is zero-based
+            var dd = this.getDate();
+            return [(dd>9 ? '' : '0') + dd,
+                    (mm>9 ? '' : '0') + mm,
+                    this.getFullYear()
+                    ].join('/');
+        };
+
+        function msToHMS( ms ) {
+            var ss = ms / 1000;
+            var hh = parseInt( ss / 3600 );
+            ss = ss % 3600;
+            var mm = parseInt( ss / 60 );
+            ss = Math.floor(ss % 60);
+
+            return [(hh>9 ? '' : '0') + hh,
+                (mm>9 ? '' : '0') + mm,
+                (ss>9 ? '' : '0') + ss
+                ].join(':');
         }
 
         // --------------------------------------------------------------------------------------
