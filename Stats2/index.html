@@ -182,6 +182,7 @@
                 spreadsheetId: SPREADSHEETID,
                 range: newRange,
             }).then(function(response) {
+				console.log(response);
                 for (var i = 0; i < response.result.values.length; i++) {
 					var cat = CATEGORYNAMES.indexOf(response.result.values[i][0]);
 					var name = response.result.values[i][1];
@@ -190,11 +191,11 @@
             });
 		}
 		
-		function createQuickAccessBTN(name, category) {
+		function createQuickAccessBTN(name, categoryIX) {
 			var clone = quickAccessT.content.cloneNode(true);
 			clone.querySelector("[id='quick']").className += " " + CATEGORYCLASSES[categoryIX];
 			clone.querySelector("[id='quick']").innerHTML = name;
-			clone.querySelector("[id='quick']").onclick = function() { sendActivity(txtActivityName.value, txtActivityDetails.value, category, TIMEOFFSETS[slider.value]) };
+			clone.querySelector("[id='quick']").onclick = function() { sendActivity(name, "", categoryIX, TIMEOFFSETS[slider.value]) };
 			quickAccessDeck.appendChild(clone);
 		}
 		
