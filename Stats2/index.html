@@ -35,6 +35,7 @@
             .center { text-align: center;}
             .timeSlider { background: #FF8282;}
             #ex1Slider.slider-selection { background: #BABABA;}
+			.quickAccessDeck {  }
         </style>
     </head>
     <body class="body">
@@ -118,6 +119,13 @@
                 </template>
                 
             </div>
+			<div id="quickAccessDeck" class="quickAccessDeck">
+				
+				<template id="quickAccess-template">
+					<button id="quick" type="button" class="btn btn-primary full-flex">********</button>
+				</template>
+				
+			</div>
         </div>
     </body>
 
@@ -140,17 +148,21 @@
         const slider = document.getElementById("sld_time_offset");
         const timeOffsetLabel = document.getElementById("lbl_current_offset");
         const actCardT = document.getElementById("actCard-template");
+		const quickAccessT = document.getElementById("quickAccess-template");
 
         const cardDeck = document.getElementById('activitiesDeck');
+		const cardDeck = document.getElementById('quickAccessDeck');
 
         const TIMEDATAPAGE = "'Time allocation data'!";
         const CATEGORYRANGES = ["B{0}:E{1}", "F{0}:I{1}", "J{0}:M{1}", "N{0}:Q{1}", "R{0}:U{1}", "V{0}:Y{1}", "Z{0}:AC{1}"];
         const CATEGORYCLASSES = ["gaming", "hobby", "work", "social", "entertainment", "life", "other"];
         const CATEGORYNAMES = ["Gaming", "Useful Hobby", "Work", "Social", "Entertainment", "Life Necessity", "Other"];
+		const QUICKACCESSRANGE = "Processing!F3:G";
 
         const TIMEOFFSETS = [-3600, -2700, -2400, -1800, -1200, -900, -750, -600, -450, -300, -240, -180, -120, -60, -30, -5, 0, 5, 15, 30, 60, 90, 120]
 
         var lastUsedIX = [0, 0, 0, 0, 0, 0, 0];
+		var quickAccess = [];
 
         var timers = []
         var actCards = []
@@ -160,9 +172,28 @@
         function onReady() {
             time_offset_change();
             fetchIXs();
+			fetchQuickAccess();
             //findOpenActivities is called through fetchIX to avoid await, async, then, callback hell
         }
-
+		
+		function fetchQuickAccess() {
+			var newRange = QUICKACCESSRANGE;
+            gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: SPREADSHEETID,
+                range: newRange,
+            }).then(function(response) {
+                console.log(response);
+            });
+		}
+		
+		function createQuickAccessBTN(name, category) {
+			var clone = quickAccessT.content.cloneNode(true);
+			clone.querySelector("[id='quick']").className += " " + CATEGORYCLASSES[categoryIX];
+			clone.querySelector("[id='quick']").innerHTML = name;
+			clone.querySelector("[id='quick']").onclick = function() { sendActivity(txtActivityName.value, txtActivityDetails.value, CATEGORYNAMES.indexOf(category), TIMEOFFSETS[slider.value]) };
+			cardDeck.appendChild(clone);
+		}
+		
         function onIXsFetched() {
             findOpenActivities();
         }
@@ -437,6 +468,7 @@
         }
     
         function initClient() {
+		console.log("Logging");
             gapi.client.init({
                 apiKey: API_KEY,
                 clientId: CLIENT_ID,
@@ -449,6 +481,7 @@
                 updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
                 authorizeButton.onclick = handleAuthClick;
                 signoutButton.onclick = handleSignoutClick;
+				console.log("Logged");
                 
                 onReady();
             }, function(error) {
