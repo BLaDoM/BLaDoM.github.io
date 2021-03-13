@@ -151,7 +151,7 @@
 		const quickAccessT = document.getElementById("quickAccess-template");
 
         const cardDeck = document.getElementById('activitiesDeck');
-		const cardDeck = document.getElementById('quickAccessDeck');
+		const quickAccessDeck = document.getElementById('quickAccessDeck');
 
         const TIMEDATAPAGE = "'Time allocation data'!";
         const CATEGORYRANGES = ["B{0}:E{1}", "F{0}:I{1}", "J{0}:M{1}", "N{0}:Q{1}", "R{0}:U{1}", "V{0}:Y{1}", "Z{0}:AC{1}"];
@@ -191,7 +191,7 @@
 			clone.querySelector("[id='quick']").className += " " + CATEGORYCLASSES[categoryIX];
 			clone.querySelector("[id='quick']").innerHTML = name;
 			clone.querySelector("[id='quick']").onclick = function() { sendActivity(txtActivityName.value, txtActivityDetails.value, CATEGORYNAMES.indexOf(category), TIMEOFFSETS[slider.value]) };
-			cardDeck.appendChild(clone);
+			quickAccessDeck.appendChild(clone);
 		}
 		
         function onIXsFetched() {
